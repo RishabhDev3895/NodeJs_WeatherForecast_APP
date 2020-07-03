@@ -4,8 +4,7 @@ const hbs= require('hbs')
 const geocode= require('./utils/geocode')
 const forecast= require('./utils/forecast')
 
-
-
+const port= process.env.PORT||3000
 const app= express()
 // the of the directory to serve provide it to express.static as static asset of our site
 const publicDirectoryPath= path.join(__dirname,'../public')
@@ -87,6 +86,6 @@ app.get('*',(req,res)=>{
 //     res.send('Hello Express!')            
 // })
 
-app.listen(3000,()=>{
-    console.log("Server is running on port 3000")
+app.listen(port,()=>{
+    console.log("Server is running on port "+ port)
 })
